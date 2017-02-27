@@ -19,9 +19,9 @@
   "scripts": {},
   "dependencies": {},
   "devDependencies": {
-    "jake": "latest",
-    "jake-utils": "latest",
     "archiver": "latest",
-    "clean-css": "latest"
+    "clean-css": "^2.0.0",
+    "jake": "latest",
+    "jake-utils": "latest"
   }
 }
