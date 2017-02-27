@@ -95,6 +95,7 @@ app.load = function() {
     var container = document.getElementById("codeEditor");
     codeEditor = new jsoneditor.JSONEditor(container, {
       mode: 'code',
+      indentation: 4,
       change: function () {
         app.lastChanged = codeEditor;
       },
