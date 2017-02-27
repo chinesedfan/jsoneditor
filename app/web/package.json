@@ -1,0 +1,26 @@
+{
+  "name": "jsoneditor.webapp",
+  "version": "1.0.0",
+  "description": "Resources files of jsoneditor web application",
+  "main": "app-min.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chinesedfan/jsoneditor.git"
+  },
+  "keywords": [
+    "jsoneditor",
+    "webapp"
+  ],
+  "author": "Xianming Zhong",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/chinesedfan/jsoneditor/issues"
+  },
+  "homepage": "https://github.com/chinesedfan/jsoneditor#readme"
+}

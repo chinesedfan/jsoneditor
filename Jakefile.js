@@ -221,6 +221,8 @@ task('webapp', function () {
   jake.cpR(webAppSrc + 'index.html', webApp);
   jake.cpR(webAppSrc + 'favicon.ico', webApp);
   jake.cpR(webAppSrc + 'img/header_background.png', webAppImg);
+  jake.cpR(webAppSrc + 'package.json', webApp);
+  jake.cpR(webAppSrc + '.npmignore', webApp);
 
   // update date and verison in index.html
   replacePlaceholders(webApp + 'index.html');
