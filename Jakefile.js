@@ -161,7 +161,7 @@ task('zip', ['build', 'minify'], {async: true}, function () {
  * build the web app
  */
 desc('Build web app');
-task('webapp', ['build', 'minify'], function () {
+task('webapp', function () {
   var webAppSrc = './app/web/';
   var libSrc = './lib/';
   var webApp = BUILD + '/app/web/';
@@ -180,7 +180,6 @@ task('webapp', ['build', 'minify'], function () {
   jake.mkdirP(webAppLib + 'ace/');
   jake.mkdirP(webAppLib + 'jsoneditor/');
   jake.mkdirP(webAppLib + 'jsoneditor/img/');
-  jake.mkdirP(webAppLib + 'jsonlint/');
   jake.mkdirP(webAppImg);
 
   // concatenate the javascript files
@@ -188,7 +187,6 @@ task('webapp', ['build', 'minify'], function () {
     src: [
       webAppSrc + 'queryparams.js',
       webAppSrc + 'ajax.js',
-      webAppSrc + 'fileretriever.js',
       webAppSrc + 'notify.js',
       webAppSrc + 'splitter.js',
       webAppSrc + 'app.js'
@@ -206,7 +204,6 @@ task('webapp', ['build', 'minify'], function () {
   // concatenate the css files
   concat({
     src: [
-      webAppSrc + 'fileretriever.css',
       webAppSrc + 'app.css'
     ],
     dest: appCss,
@@ -221,26 +218,13 @@ task('webapp', ['build', 'minify'], function () {
   fs.unlinkSync(appCss);
 
   // copy files
-  jake.cpR('./README.md', webApp);
-  jake.cpR('./HISTORY.md', webApp);
-  jake.cpR('./NOTICE', webApp);
-  jake.cpR('./LICENSE', webApp);
-  jake.cpR('./LICENSE', webApp);
-  jake.cpR(webAppSrc + 'cache.manifest', webApp);
-  jake.cpR(webAppSrc + 'robots.txt', webApp);
-  jake.cpR(webAppSrc + 'datapolicy.txt', webApp);
   jake.cpR(webAppSrc + 'index.html', webApp);
   jake.cpR(webAppSrc + 'favicon.ico', webApp);
-  jake.cpR(webAppSrc + 'fileretriever.php', webApp);
-  jake.cpR(webAppSrc + 'googlea47c4a0b36d11021.html', webApp);
-  jake.cpR(webAppSrc + 'img/logo.png', webAppImg);
   jake.cpR(webAppSrc + 'img/header_background.png', webAppImg);
-  jake.cpR(webAppSrc + 'doc/', webApp);
 
   // update date and verison in index.html
   replacePlaceholders(webApp + 'index.html');
   replacePlaceholders(webApp + 'index.html'); // TODO: fix bug in replace, should replace all occurrences
-  replacePlaceholders(webApp + 'cache.manifest');
 
   // concatenate and copy ace files
   concat({
@@ -255,9 +239,6 @@ task('webapp', ['build', 'minify'], function () {
     separator: '\n'
   });
   jake.cpR(libSrc + 'ace/worker-json.js', webAppAce);
-
-  // copy json lint file
-  jake.cpR(libSrc + 'jsonlint/jsonlint.js', webAppLib + 'jsonlint/')
 
   // copy jsoneditor files
   jake.cpR(JSONEDITOR_MIN, webAppLib + 'jsoneditor/');
