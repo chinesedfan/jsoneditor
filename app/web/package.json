@@ -1,6 +1,6 @@
 {
   "name": "jsoneditor.webapp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Resources files of jsoneditor web application",
   "main": "app-min.js",
   "directories": {
