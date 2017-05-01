@@ -16,9 +16,7 @@
     "url": "https://github.com/josdejong/jsoneditor.git"
   },
   "bugs": "https://github.com/josdejong/jsoneditor/issues",
-  "scripts": {
-    "webapp:build": "jake webapp"
-  },
+  "scripts": {},
   "dependencies": {},
   "devDependencies": {
     "archiver": "latest",
