@@ -155,7 +155,7 @@ JSONEditor.prototype.setMode = function (mode) {
         this._delete();
         util.clear(this);
         util.extend(this, config.editor.prototype);
-        this._create(container, options);
+        this._create(container, options, '');
 
         this.setName(name);
         this.setText(data);
@@ -168,7 +168,7 @@ JSONEditor.prototype.setMode = function (mode) {
         this._delete();
         util.clear(this);
         util.extend(this, config.editor.prototype);
-        this._create(container, options);
+        this._create(container, options, '');
 
         this.setName(name);
         this.set(data);
